@@ -25,15 +25,26 @@
             </div>
             <!-- Кнопка с музыкой -->
             <!-- Кнопка с музыкой -->
-            <div class="music-wrapper">
-                <button class="music-btn" id="musicBtn">
-                    <span class="music-icon">▶</span>
-                    <svg class="orbit-text" viewBox="0 0 100 100">
-                        <path id="orbitPath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none" />
-                    </svg>
-                </button>
-                <audio id="bgMusic" src="1.mp3" loop></audio>
-            </div>
+<!-- Кнопка с музыкой -->
+<div class="music-wrapper">
+    <button class="music-btn" id="musicBtn">
+        <!-- SVG иконка PLAY (треугольник) - видна по умолчанию -->
+        <svg class="music-icon play-icon" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5,3 19,12 5,21"/>
+        </svg>
+        
+        <!-- SVG иконка PAUSE (две палочки) - скрыта по умолчанию -->
+        <svg class="music-icon pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+            <rect x="6" y="4" width="4" height="16"/>
+            <rect x="14" y="4" width="4" height="16"/>
+        </svg>
+        
+        <svg class="orbit-text" viewBox="0 0 100 100">
+            <path id="orbitPath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none" />
+        </svg>
+    </button>
+    <audio id="bgMusic" src="1.mp3" loop></audio>
+</div>
         </div>
     </section>
 
