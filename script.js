@@ -224,38 +224,35 @@
     }
     
     // ========== МУЗЫКА ==========
-    function initMusic() {
-        const musicBtn = document.getElementById('musicBtn');
-        if (!musicBtn) return;
-        
-        const bgMusic = document.getElementById('bgMusic');
-        if (!bgMusic) return;
-        
-        const musicIcon = document.querySelector('.music-icon');
-        let isPlaying = false;
+// ========== МУЗЫКА ==========
+function initMusic() {
+    const musicBtn = document.getElementById('musicBtn');
+    if (!musicBtn) return;
+    
+    const bgMusic = document.getElementById('bgMusic');
+    if (!bgMusic) return;
+    
+    let isPlaying = false;
 
-        musicBtn.addEventListener('click', function () {
-            if (isPlaying) {
-                bgMusic.pause();
-                musicBtn.classList.remove('playing');
-                if (musicIcon) musicIcon.textContent = '▶';
-                isPlaying = false;
-            } else {
-                bgMusic.play().catch(function(error) {
-                    console.log('Автовоспроизведение заблокировано');
-                });
-                musicBtn.classList.add('playing');
-                if (musicIcon) musicIcon.textContent = '⏸';
-                isPlaying = true;
-            }
-        });
-
-        bgMusic.addEventListener('ended', function () {
+    musicBtn.addEventListener('click', function () {
+        if (isPlaying) {
+            bgMusic.pause();
             musicBtn.classList.remove('playing');
-            if (musicIcon) musicIcon.textContent = '▶';
             isPlaying = false;
-        });
-    }
+        } else {
+            bgMusic.play().catch(function(error) {
+                console.log('Автовоспроизведение заблокировано');
+            });
+            musicBtn.classList.add('playing');
+            isPlaying = true;
+        }
+    });
+
+    bgMusic.addEventListener('ended', function () {
+        musicBtn.classList.remove('playing');
+        isPlaying = false;
+    });
+}
     
     // ========== КАЛЕНДАРЬ ==========
     function initCalendar() {
